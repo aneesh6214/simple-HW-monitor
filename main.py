@@ -1,6 +1,11 @@
 import tkinter as tk
 import tkinter.font as tkFont
 import requests
+import threading
+import sys
+import os
+from PIL import Image, ImageDraw, ImageFont
+import pystray
 
 def find_nodes_by_id(obj, ids, found=None):
     """
@@ -12,16 +17,13 @@ def find_nodes_by_id(obj, ids, found=None):
         found = {}
 
     if isinstance(obj, dict):
-        # If this object has an 'id' that's in our target set, store it
         if obj.get("id") in ids:
             found[obj["id"]] = obj
         
-        # Recurse into any children
         for child in obj.get("Children", []):
             find_nodes_by_id(child, ids, found)
 
     elif isinstance(obj, list):
-        # If it's a list, recurse for each item
         for item in obj:
             find_nodes_by_id(item, ids, found)
 
@@ -30,20 +32,16 @@ def find_nodes_by_id(obj, ids, found=None):
 class HWOverlay:
     def __init__(self, master):
         self.master = master
+        self.master.protocol("WM_DELETE_WINDOW", self.hide_window)
 
-        # Remove the window frame
         self.master.overrideredirect(True)
 
-        # Make the window always on top
         self.master.attributes("-topmost", True)
 
-        # Set the entire window to be 50% opaque (0.0 = fully transparent, 1.0 = fully opaque)
         self.master.attributes("-alpha", 0.5)
 
-        # Use a black background
         self.master.configure(bg="black")
 
-        # Position the overlay in the top-right corner
         screen_width = self.master.winfo_screenwidth()
         window_width = 180
         window_height = 60
@@ -52,14 +50,11 @@ class HWOverlay:
         geometry_string = f"{window_width}x{window_height}+{x_position}+{y_position}"
         self.master.geometry(geometry_string)
 
-        # Create a frame (so we can arrange labels side by side)
         self.frame = tk.Frame(self.master, bg="black")
         self.frame.pack(fill=tk.BOTH, expand=True)
 
-        # Define the Outfit font (must be installed system-wide)
         self.outfit_bold = tkFont.Font(family="Outfit", size=10, weight="bold")
 
-        # Create labels for CPU and GPU (side by side)
         self.cpu_label = tk.Label(
             self.frame,
             text="CPU: ...",
@@ -78,20 +73,17 @@ class HWOverlay:
         )
         self.gpu_label.pack(side=tk.LEFT, padx=5, pady=5)
 
-        # The URL to fetch data from
         self.url = "http://localhost:8085/data.json"
 
-        # The IDs we are interested in
         self.target_ids = {19, 61}
 
-        # Start updating
         self.update_data()
 
     def update_data(self):
         """
         Fetch the data from the JSON endpoint, parse the CPU/GPU values,
         and update the overlay labels.
-        Then schedule this to run again after 5 seconds.
+        Then schedule this to run again after 2.5 seconds.
         """
         try:
             response = requests.get(self.url, timeout=5)
@@ -104,22 +96,86 @@ class HWOverlay:
             cpu_temp = cpu.get("Value", "N/A")
             gpu_temp = gpu.get("Value", "N/A")
 
-            # Update labels (side by side)
             self.cpu_label.config(text=f"CPU: {cpu_temp}")
             self.gpu_label.config(text=f"GPU: {gpu_temp}")
 
         except requests.exceptions.RequestException as e:
-            # If there's a network issue, show an error
             self.cpu_label.config(text="CPU: Error")
             self.gpu_label.config(text="GPU: Error")
 
-        # Schedule the next update in 5000 ms (5 seconds)
         self.master.after(2500, self.update_data)
+
+    def hide_window(self):
+        self.master.withdraw()
+        if self.icon:
+            self.icon.update_menu()
+
+    def show_window(self):
+        self.master.deiconify()
+        if self.icon:
+            self.icon.update_menu()
+
+    def set_tray_icon(self, icon):
+        self.icon = icon
+
+def create_celsius_icon():
+    """
+    Creates a simple '°C' icon for the system tray using Pillow.
+    """
+    return Image.open("icon.ico")
+
+def start_tray(app):
+    """
+    Initializes and runs the system tray icon.
+    """
+    icon = pystray.Icon("HWOverlay")
+    icon.icon = create_celsius_icon()
+    icon.title = "HW Monitor Overlay"
+
+    def toggle_overlay(icon, item):
+        if app.master.state() == 'withdrawn':
+            app.show_window()
+        else:
+            app.hide_window()
+        icon.menu = get_menu()
+
+    def exit_app(icon, item):
+        icon.stop()
+        app.master.destroy()
+        sys.exit()
+
+    def get_menu():
+        if app.master.state() == 'withdrawn':
+            toggle_text = "Show"
+        else:
+            toggle_text = "Hide"
+        return pystray.Menu(
+            pystray.MenuItem(toggle_text, toggle_overlay),
+            pystray.MenuItem("Exit", exit_app)
+        )
+
+    icon.menu = get_menu()
+
+    app.set_tray_icon(icon)
+
+    icon.run()
+
+def exit_app(icon, app):
+    """
+    Exits the application gracefully.
+    """
+    icon.stop()
+    app.master.destroy()
+    sys.exit()
 
 def main():
     root = tk.Tk()
     app = HWOverlay(root)
+
+    tray_thread = threading.Thread(target=start_tray, args=(app,), daemon=True)
+    tray_thread.start()
+
     root.mainloop()
 
 if __name__ == "__main__":
-    main()
+        main()
