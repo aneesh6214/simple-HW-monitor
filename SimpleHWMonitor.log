@@ -1,0 +1,114 @@
+2024-12-24 06:48:23,085 INFO:Launched C:\Users\anees\OneDrive\Desktop\Code\simple-HW-monitor\OpenHardwareMonitor\OpenHardwareMonitor.exe with PID 4588
+2024-12-24 06:48:23,088 DEBUG:Starting new HTTP connection (1): localhost:8085
+2024-12-24 06:48:24,616 DEBUG:http://localhost:8085 "GET /data.json HTTP/1.1" 200 12384
+2024-12-24 06:48:24,624 DEBUG:Importing BlpImagePlugin
+2024-12-24 06:48:24,625 DEBUG:Importing BmpImagePlugin
+2024-12-24 06:48:24,625 DEBUG:Importing BufrStubImagePlugin
+2024-12-24 06:48:24,625 DEBUG:Importing CurImagePlugin
+2024-12-24 06:48:24,625 DEBUG:Importing DcxImagePlugin
+2024-12-24 06:48:24,627 DEBUG:Importing DdsImagePlugin
+2024-12-24 06:48:24,629 DEBUG:Importing EpsImagePlugin
+2024-12-24 06:48:24,630 DEBUG:Importing FitsImagePlugin
+2024-12-24 06:48:24,631 DEBUG:Importing FliImagePlugin
+2024-12-24 06:48:24,631 DEBUG:Importing FpxImagePlugin
+2024-12-24 06:48:24,631 DEBUG:Image: failed to import FpxImagePlugin: No module named 'olefile'
+2024-12-24 06:48:24,631 DEBUG:Importing FtexImagePlugin
+2024-12-24 06:48:24,633 DEBUG:Importing GbrImagePlugin
+2024-12-24 06:48:24,633 DEBUG:Importing GifImagePlugin
+2024-12-24 06:48:24,633 DEBUG:Importing GribStubImagePlugin
+2024-12-24 06:48:24,634 DEBUG:Importing Hdf5StubImagePlugin
+2024-12-24 06:48:24,634 DEBUG:Importing IcnsImagePlugin
+2024-12-24 06:48:24,635 DEBUG:Importing IcoImagePlugin
+2024-12-24 06:48:24,635 DEBUG:Importing ImImagePlugin
+2024-12-24 06:48:24,635 DEBUG:Importing ImtImagePlugin
+2024-12-24 06:48:24,636 DEBUG:Importing IptcImagePlugin
+2024-12-24 06:48:24,636 DEBUG:Importing JpegImagePlugin
+2024-12-24 06:48:24,636 DEBUG:Importing Jpeg2KImagePlugin
+2024-12-24 06:48:24,636 DEBUG:Importing McIdasImagePlugin
+2024-12-24 06:48:24,636 DEBUG:Importing MicImagePlugin
+2024-12-24 06:48:24,637 DEBUG:Image: failed to import MicImagePlugin: No module named 'olefile'
+2024-12-24 06:48:24,637 DEBUG:Importing MpegImagePlugin
+2024-12-24 06:48:24,637 DEBUG:Importing MpoImagePlugin
+2024-12-24 06:48:24,641 DEBUG:Importing MspImagePlugin
+2024-12-24 06:48:24,642 DEBUG:Importing PalmImagePlugin
+2024-12-24 06:48:24,642 DEBUG:Importing PcdImagePlugin
+2024-12-24 06:48:24,643 DEBUG:Importing PcxImagePlugin
+2024-12-24 06:48:24,643 DEBUG:Importing PdfImagePlugin
+2024-12-24 06:48:24,645 DEBUG:Importing PixarImagePlugin
+2024-12-24 06:48:24,646 DEBUG:Importing PngImagePlugin
+2024-12-24 06:48:24,646 DEBUG:Importing PpmImagePlugin
+2024-12-24 06:48:24,646 DEBUG:Importing PsdImagePlugin
+2024-12-24 06:48:24,646 DEBUG:Importing QoiImagePlugin
+2024-12-24 06:48:24,646 DEBUG:Importing SgiImagePlugin
+2024-12-24 06:48:24,646 DEBUG:Importing SpiderImagePlugin
+2024-12-24 06:48:24,648 DEBUG:Importing SunImagePlugin
+2024-12-24 06:48:24,648 DEBUG:Importing TgaImagePlugin
+2024-12-24 06:48:24,648 DEBUG:Importing TiffImagePlugin
+2024-12-24 06:48:24,648 DEBUG:Importing WebPImagePlugin
+2024-12-24 06:48:24,649 DEBUG:Importing WmfImagePlugin
+2024-12-24 06:48:24,650 DEBUG:Importing XbmImagePlugin
+2024-12-24 06:48:24,650 DEBUG:Importing XpmImagePlugin
+2024-12-24 06:48:24,650 DEBUG:Importing XVThumbImagePlugin
+2024-12-24 06:48:27,128 DEBUG:Starting new HTTP connection (1): localhost:8085
+2024-12-24 06:48:27,129 DEBUG:http://localhost:8085 "GET /data.json HTTP/1.1" 200 12378
+2024-12-24 06:48:29,630 DEBUG:Starting new HTTP connection (1): localhost:8085
+2024-12-24 06:48:29,632 DEBUG:http://localhost:8085 "GET /data.json HTTP/1.1" 200 12378
+2024-12-24 06:48:30,472 INFO:Exiting application via system tray.
+2024-12-24 06:48:30,478 INFO:Cleaning up: Terminating OpenHardwareMonitor.exe
+2024-12-24 06:48:30,478 ERROR:Error terminating process 4588: (pid=4588)
+2024-12-24 06:48:30,478 INFO:Removed lock file.
+2024-12-24 06:52:24,850 INFO:Launched C:\Users\anees\OneDrive\Desktop\Code\simple-HW-monitor\OpenHardwareMonitor\OpenHardwareMonitor.exe with PID 39700
+2024-12-24 06:52:24,853 DEBUG:Starting new HTTP connection (1): localhost:8085
+2024-12-24 06:52:25,885 DEBUG:http://localhost:8085 "GET /data.json HTTP/1.1" 200 9697
+2024-12-24 06:52:25,893 DEBUG:Importing BlpImagePlugin
+2024-12-24 06:52:25,894 DEBUG:Importing BmpImagePlugin
+2024-12-24 06:52:25,894 DEBUG:Importing BufrStubImagePlugin
+2024-12-24 06:52:25,894 DEBUG:Importing CurImagePlugin
+2024-12-24 06:52:25,894 DEBUG:Importing DcxImagePlugin
+2024-12-24 06:52:25,895 DEBUG:Importing DdsImagePlugin
+2024-12-24 06:52:25,896 DEBUG:Importing EpsImagePlugin
+2024-12-24 06:52:25,897 DEBUG:Importing FitsImagePlugin
+2024-12-24 06:52:25,898 DEBUG:Importing FliImagePlugin
+2024-12-24 06:52:25,898 DEBUG:Importing FpxImagePlugin
+2024-12-24 06:52:25,899 DEBUG:Image: failed to import FpxImagePlugin: No module named 'olefile'
+2024-12-24 06:52:25,899 DEBUG:Importing FtexImagePlugin
+2024-12-24 06:52:25,899 DEBUG:Importing GbrImagePlugin
+2024-12-24 06:52:25,899 DEBUG:Importing GifImagePlugin
+2024-12-24 06:52:25,899 DEBUG:Importing GribStubImagePlugin
+2024-12-24 06:52:25,900 DEBUG:Importing Hdf5StubImagePlugin
+2024-12-24 06:52:25,900 DEBUG:Importing IcnsImagePlugin
+2024-12-24 06:52:25,901 DEBUG:Importing IcoImagePlugin
+2024-12-24 06:52:25,901 DEBUG:Importing ImImagePlugin
+2024-12-24 06:52:25,902 DEBUG:Importing ImtImagePlugin
+2024-12-24 06:52:25,902 DEBUG:Importing IptcImagePlugin
+2024-12-24 06:52:25,903 DEBUG:Importing JpegImagePlugin
+2024-12-24 06:52:25,903 DEBUG:Importing Jpeg2KImagePlugin
+2024-12-24 06:52:25,903 DEBUG:Importing McIdasImagePlugin
+2024-12-24 06:52:25,903 DEBUG:Importing MicImagePlugin
+2024-12-24 06:52:25,903 DEBUG:Image: failed to import MicImagePlugin: No module named 'olefile'
+2024-12-24 06:52:25,903 DEBUG:Importing MpegImagePlugin
+2024-12-24 06:52:25,904 DEBUG:Importing MpoImagePlugin
+2024-12-24 06:52:25,908 DEBUG:Importing MspImagePlugin
+2024-12-24 06:52:25,908 DEBUG:Importing PalmImagePlugin
+2024-12-24 06:52:25,909 DEBUG:Importing PcdImagePlugin
+2024-12-24 06:52:25,909 DEBUG:Importing PcxImagePlugin
+2024-12-24 06:52:25,909 DEBUG:Importing PdfImagePlugin
+2024-12-24 06:52:25,913 DEBUG:Importing PixarImagePlugin
+2024-12-24 06:52:25,913 DEBUG:Importing PngImagePlugin
+2024-12-24 06:52:25,913 DEBUG:Importing PpmImagePlugin
+2024-12-24 06:52:25,913 DEBUG:Importing PsdImagePlugin
+2024-12-24 06:52:25,913 DEBUG:Importing QoiImagePlugin
+2024-12-24 06:52:25,914 DEBUG:Importing SgiImagePlugin
+2024-12-24 06:52:25,914 DEBUG:Importing SpiderImagePlugin
+2024-12-24 06:52:25,914 DEBUG:Importing SunImagePlugin
+2024-12-24 06:52:25,914 DEBUG:Importing TgaImagePlugin
+2024-12-24 06:52:25,915 DEBUG:Importing TiffImagePlugin
+2024-12-24 06:52:25,915 DEBUG:Importing WebPImagePlugin
+2024-12-24 06:52:25,916 DEBUG:Importing WmfImagePlugin
+2024-12-24 06:52:25,916 DEBUG:Importing XbmImagePlugin
+2024-12-24 06:52:25,916 DEBUG:Importing XpmImagePlugin
+2024-12-24 06:52:25,916 DEBUG:Importing XVThumbImagePlugin
+2024-12-24 06:52:27,260 INFO:Exiting application via system tray.
+2024-12-24 06:52:27,263 INFO:Cleaning up: Terminating OpenHardwareMonitor.exe
+2024-12-24 06:52:27,264 ERROR:Error terminating process 39700: (pid=39700)
+2024-12-24 06:52:27,264 INFO:Removed lock file.
