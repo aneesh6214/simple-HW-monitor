@@ -4,10 +4,10 @@
 ## Features Overview
 #### Overlay: Shows CPU/GPU temps at 50% opacity in the top-right corner.
 
-![Unable to load SimpleHWMonitor preview](preview.png)
+![Unable to load SimpleHWMonitor preview](previews/preview.png)
 #### System Tray: A tray icon provides quick access to hide or exit the application.
 
-![Unable to load SimpleHWMonitor system tray preview](preview-tray.png)
+![Unable to load SimpleHWMonitor system tray preview](previews/preview-tray.png)
 
 ## Build / Compilation
 This project was compiled using PyInstaller with the following command:
